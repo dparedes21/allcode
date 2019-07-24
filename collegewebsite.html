@@ -6,6 +6,41 @@
     <title>College Research</title>
 
 
+
+
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    var header = $('body');
+    var backgrounds = new Array(
+        'url(https://ihg.scene7.com/is/image/ihg/kimpton-SF-Bay-Area-header%20?qlt=85,0&resMode=sharp2&op_usm=1.75,0.9,2,0)'
+      , 'url(https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/heros/Region_California_HeroBanner_1_9.jpg/_jcr_content/renditions/cq5dam.web.2125.1195.jpeg)'
+      , 'url(https://www.hartfamilychiro.com/wp-content/uploads/2015/02/Disneyland-Measles-Outbreak-Prevention-and-Protection.jpg)'
+      , 'url(https://travelcurator.com/wp-content/uploads/2018/06/51a9c21ec0abe2c7cea592eb5f10717d.jpg)'
+    );
+    var current = 0;
+    function nextBackground() {
+        current++;
+        current = current % backgrounds.length;
+        header.css('background-image', backgrounds[current]);
+    }
+    setInterval(nextBackground, 2000);
+    header.css('background-image', backgrounds[0]);
+    });
+    </script>
+    </head>
+
+
+
+
+
+
+
+
+
+
+
+
     </head>
 
     <body>
@@ -26,19 +61,41 @@
 </div>
 
 
+  
+
     <div class="container">
-      <img src="https://ihg.scene7.com/is/image/ihg/kimpton-SF-Bay-Area-header%20?qlt=85,0&resMode=sharp2&op_usm=1.75,0.9,2,0" alt="Snow" style="width:100%;">
+          <div class="centered">California Colleges Research</div>
+       <div class="slide show" style="background-image:url(https://ihg.scene7.com/is/image/ihg/kimpton-SF-Bay-Area-header%20?qlt=85,0&resMode=sharp2&op_usm=1.75,0.9,2,0);"></div>
+     <!-- <div class="slide" style="background-image: url('https://ihg.scene7.com/is/image/ihg/kimpton-SF-Bay-Area-header%20?qlt=85,0&resMode=sharp2&op_usm=1.75,0.9,2,0');"></div>
+   <div class="slide" style="background-image: url('https://www.tripsavvy.com/thmb/2Jd4UPd-Sr4vyiAfZUEq37D1Mys=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/20121228_007-1000x1500-56a388243df78cf7727de004.jpg');"></div>
+   <div class="slide" style="background-image: url('https://www.hartfamilychiro.com/wp-content/uploads/2015/02/Disneyland-Measles-Outbreak-Prevention-and-Protection.jpg');"></div>  -->
+</div>
 
-      <div class="centered">California Colleges Research</div>
+<script>
+function cycleBackgrounds() {
+var index = 0;
+$imageEls = $('.container .slide'); // Get the images to be cycled.
+setInterval(function () {
+// Get the next index.  If at end, restart to the beginning.
+index = index + 1 < $imageEls.length ? index + 1 : 0;
+// Show the next
+$imageEls.eq(index).addClass('show');
+// Hide the previous
+$imageEls.eq(index - 1).removeClass('show');
+}, 2000);
+};
+// Document Ready.
+$(function () {
+cycleBackgrounds();
+});
+ </script>
 
-      <h1 class="h1"> Need an easier way of researching some well known schools in California?
-        </h1>
+     <h1 class="h1"> Need an easier way of researching some well known schools in California?
+       </h1>
 
-      <h2 class="h2" id = "blinker"><span class="blinking">WE GOT YOU</span></h2>
+     <h2 class="h2" id = "blinker"><span class="blinking">WE GOT YOU</span></h2>
 
 
-    </div>
+   </body>
 
-    </body>
-
-    </html>
+   </html>
